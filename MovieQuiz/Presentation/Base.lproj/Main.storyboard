@@ -22,15 +22,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeJ-0t-IY6" userLabel="Index Label">
-                                <rect key="frame" x="338" y="96" width="37" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" name="YP Black"/>
-                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
-                                <color key="textColor" name="YP White"/>
-                                <color key="highlightedColor" name="YP White"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Рейтинг этого фильма меньше 5?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-31-Z6c" userLabel="Question Label">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Рейтинг этого фильма меньше 6?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-31-Z6c" userLabel="Question Label">
                                 <rect key="frame" x="40" y="667" width="335" height="78"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" name="YP Black"/>
@@ -38,14 +30,10 @@
                                 <color key="textColor" name="YP White"/>
                                 <color key="highlightedColor" name="YP Black"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-wD-hmc" userLabel="Preview Image">
-                                <rect key="frame" x="40" y="147" width="335" height="502"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="ISQ-CC-vmZ">
                                 <rect key="frame" x="20" y="768" width="374" height="60"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-02-QAx" userLabel="No Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uG0-02-QAx" userLabel="noButton">
                                         <rect key="frame" x="0.0" y="0.0" width="177.5" height="60"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <state key="normal" title="Button"/>
@@ -55,12 +43,15 @@
                                             <color key="baseBackgroundColor" name="YP White"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius ">
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="noButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qfy-eV-eG8"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCd-Y0-QgC" userLabel="Yes Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jCd-Y0-QgC" userLabel="yesButton">
                                         <rect key="frame" x="196.5" y="0.0" width="177.5" height="60"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <state key="normal" title="Button"/>
@@ -70,34 +61,56 @@
                                             <color key="baseBackgroundColor" name="YP White"/>
                                         </buttonConfiguration>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius ">
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="yesButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="463-s5-v9r"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="oef-zk-MNW"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Вопрос:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy7-yC-d8A" userLabel="Question Title Label">
-                                <rect key="frame" x="20" y="95" width="74" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy7-yC-d8A" userLabel="Question Title Label">
+                                <rect key="frame" x="20" y="106" width="72" height="24.5"/>
                                 <color key="backgroundColor" name="YP Black"/>
                                 <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
                                 <color key="textColor" name="YP White"/>
                                 <color key="highlightedColor" name="YP White"/>
                                 <color key="shadowColor" name="YP Black"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DeJ-0t-IY6" userLabel="Index Label">
+                                <rect key="frame" x="358" y="106" width="36" height="23.5"/>
+                                <color key="backgroundColor" name="YP Black"/>
+                                <fontDescription key="fontDescription" name="YSDisplay-Medium" family="YS Display" pointSize="20"/>
+                                <color key="textColor" name="YP White"/>
+                                <color key="highlightedColor" name="YP White"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-wD-hmc" userLabel="Preview Image">
+                                <rect key="frame" x="31" y="158" width="335" height="501"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="YP Black"/>
                         <constraints>
+                            <constraint firstItem="DeJ-0t-IY6" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="HIB-kF-iYc"/>
+                            <constraint firstItem="zy7-yC-d8A" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JPW-Mm-TDn"/>
                             <constraint firstItem="ISQ-CC-vmZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="YsA-Bh-HFZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ISQ-CC-vmZ" secondAttribute="trailing" constant="20" id="fwz-hI-8mp"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="ISQ-CC-vmZ" secondAttribute="bottom" id="giG-1v-VZf"/>
+                            <constraint firstItem="zy7-yC-d8A" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="oik-nk-0DC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DeJ-0t-IY6" secondAttribute="trailing" constant="20" id="voe-9C-b89"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="DeJ-0t-IY6" id="UC0-AF-J31"/>
+                        <outlet property="imageView" destination="r5U-wD-hmc" id="4ms-ld-RwV"/>
+                        <outlet property="textLabel" destination="qwE-31-Z6c" id="ZEs-da-Hee"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
