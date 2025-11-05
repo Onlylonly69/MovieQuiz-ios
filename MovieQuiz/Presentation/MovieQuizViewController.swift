@@ -1,5 +1,11 @@
 import UIKit
 
+//struct ViewModel {
+//  let image: UIImage
+//  let question: String
+//  let questionNumber: String
+//}
+
 struct QuizStepViewModel {
   let image: UIImage
   let question: String
@@ -23,6 +29,9 @@ final class MovieQuizViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        let firstQuestion = questions[currentQuestionIndex]
+            let viewModel = convert(model: firstQuestion)
+            show(quiz: viewModel)
     }
     
     @IBOutlet private var imageView: UIImageView!
@@ -112,7 +121,9 @@ final class MovieQuizViewController: UIViewController {
         imageView.layer.borderColor = isCorrect ? UIColor.ypGreen.cgColor : UIColor.ypRed.cgColor
         imageView.layer.cornerRadius = 20
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) { 
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.imageView.layer.borderWidth = 0
+            self.imageView.layer.borderColor = UIColor.clear.cgColor
             self.showNextQuestionOrResults()
         }
     }
