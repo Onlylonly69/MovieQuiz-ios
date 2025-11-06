@@ -30,7 +30,7 @@
                                 <rect key="frame" x="20" y="106" width="374" height="722"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14R-Er-7bJ">
-                                        <rect key="frame" x="20" y="20" width="334" height="24.5"/>
+                                        <rect key="frame" x="20" y="10" width="334" height="24.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy7-yC-d8A" userLabel="Question Title Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="24.5"/>
@@ -52,14 +52,14 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-wD-hmc" userLabel="Preview Image">
-                                        <rect key="frame" x="20" y="64.5" width="334" height="501"/>
+                                        <rect key="frame" x="20" y="54.5" width="334" height="501"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="r5U-wD-hmc" secondAttribute="height" multiplier="2:3" id="by1-zJ-SqU"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Рейтинг этого фильма меньше 6?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-31-Z6c" userLabel="Question Label">
-                                        <rect key="frame" x="20" y="585.5" width="334" height="36.5"/>
+                                        <rect key="frame" x="20" y="575.5" width="334" height="46.5"/>
                                         <color key="backgroundColor" name="YP Black"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
@@ -124,7 +124,7 @@
                                     <constraint firstAttribute="trailing" secondItem="r5U-wD-hmc" secondAttribute="trailing" constant="20" id="fFf-cr-TKL"/>
                                     <constraint firstItem="r5U-wD-hmc" firstAttribute="leading" secondItem="QS8-Hg-8bL" secondAttribute="leading" constant="20" id="mEJ-2q-jgp"/>
                                 </constraints>
-                                <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="20" bottom="20" trailing="20"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
