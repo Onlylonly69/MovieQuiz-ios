@@ -26,11 +26,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-Hg-8bL">
+                            <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-Hg-8bL">
                                 <rect key="frame" x="20" y="106" width="374" height="722"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14R-Er-7bJ">
-                                        <rect key="frame" x="20" y="0.0" width="334" height="24.5"/>
+                                        <rect key="frame" x="20" y="20" width="334" height="24.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вопрос:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zy7-yC-d8A" userLabel="Question Title Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="290" height="24.5"/>
@@ -52,21 +52,21 @@
                                         </subviews>
                                     </stackView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r5U-wD-hmc" userLabel="Preview Image">
-                                        <rect key="frame" x="8.5" y="32.5" width="357" height="535.5"/>
+                                        <rect key="frame" x="20" y="64.5" width="334" height="501"/>
                                         <color key="backgroundColor" name="YP White"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="r5U-wD-hmc" secondAttribute="height" multiplier="2:3" id="by1-zJ-SqU"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Рейтинг этого фильма меньше 6?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-31-Z6c" userLabel="Question Label">
-                                        <rect key="frame" x="20" y="576" width="334" height="78"/>
+                                        <rect key="frame" x="20" y="585.5" width="334" height="36.5"/>
                                         <color key="backgroundColor" name="YP Black"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
                                         <color key="highlightedColor" name="YP Black"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-PK-RMo">
-                                        <rect key="frame" x="20" y="662" width="334" height="60"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-PK-RMo">
+                                        <rect key="frame" x="20" y="642" width="334" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-Vq-0vU" userLabel="No Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="60"/>
@@ -117,14 +117,14 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="14R-Er-7bJ" secondAttribute="trailing" constant="20" id="4Ct-lK-TA3"/>
                                     <constraint firstAttribute="trailing" secondItem="qwE-31-Z6c" secondAttribute="trailing" constant="20" id="C0P-Q1-Cji"/>
-                                    <constraint firstAttribute="bottom" secondItem="Dbs-PK-RMo" secondAttribute="bottom" id="GQD-8e-aah"/>
                                     <constraint firstItem="qwE-31-Z6c" firstAttribute="leading" secondItem="QS8-Hg-8bL" secondAttribute="leading" constant="20" id="GRI-lS-TKT"/>
-                                    <constraint firstItem="Dbs-PK-RMo" firstAttribute="top" secondItem="qwE-31-Z6c" secondAttribute="bottom" constant="8" id="WPq-y8-Id3"/>
                                     <constraint firstItem="14R-Er-7bJ" firstAttribute="leading" secondItem="QS8-Hg-8bL" secondAttribute="leading" constant="20" id="bEZ-bj-Sgg"/>
                                     <constraint firstAttribute="trailing" secondItem="Dbs-PK-RMo" secondAttribute="trailing" constant="20" id="bee-la-yPY"/>
-                                    <constraint firstItem="qwE-31-Z6c" firstAttribute="top" secondItem="r5U-wD-hmc" secondAttribute="bottom" constant="20" id="d46-2C-QGP"/>
                                     <constraint firstItem="Dbs-PK-RMo" firstAttribute="leading" secondItem="QS8-Hg-8bL" secondAttribute="leading" constant="20" id="eBT-Jo-doC"/>
+                                    <constraint firstAttribute="trailing" secondItem="r5U-wD-hmc" secondAttribute="trailing" constant="20" id="fFf-cr-TKL"/>
+                                    <constraint firstItem="r5U-wD-hmc" firstAttribute="leading" secondItem="QS8-Hg-8bL" secondAttribute="leading" constant="20" id="mEJ-2q-jgp"/>
                                 </constraints>
+                                <directionalEdgeInsets key="directionalLayoutMargins" top="20" leading="20" bottom="20" trailing="20"/>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

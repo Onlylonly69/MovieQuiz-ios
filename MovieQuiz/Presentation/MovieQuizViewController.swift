@@ -32,6 +32,7 @@ final class MovieQuizViewController: UIViewController {
         let firstQuestion = questions[currentQuestionIndex]
             let viewModel = convert(model: firstQuestion)
             show(quiz: viewModel)
+        imageView.layer.cornerRadius = 20
     }
     
     @IBOutlet private var imageView: UIImageView!
