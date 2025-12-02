@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="QS8-Hg-8bL">
-                                <rect key="frame" x="20" y="106" width="374" height="722"/>
+                                <rect key="frame" x="20" y="106" width="374" height="810.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" spacingType="standard" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="14R-Er-7bJ">
                                         <rect key="frame" x="0.0" y="10" width="374" height="24.5"/>
@@ -59,14 +59,14 @@
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" preservesSuperviewLayoutMargins="YES" text="Рейтинг этого фильма меньше 6?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwE-31-Z6c" userLabel="Question Label">
-                                        <rect key="frame" x="0.0" y="635.5" width="374" height="6.5"/>
+                                        <rect key="frame" x="0.0" y="635.5" width="374" height="27"/>
                                         <color key="backgroundColor" name="YP Black"/>
                                         <fontDescription key="fontDescription" name="YSDisplay-Bold" family="YS Display" pointSize="23"/>
                                         <color key="textColor" name="YP White"/>
                                         <color key="highlightedColor" name="YP Black"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-PK-RMo">
-                                        <rect key="frame" x="0.0" y="662" width="374" height="60"/>
+                                        <rect key="frame" x="0.0" y="682.5" width="374" height="60"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c6J-Vq-0vU" userLabel="No Button">
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="60"/>
@@ -113,6 +113,10 @@
                                 </subviews>
                                 <directionalEdgeInsets key="directionalLayoutMargins" top="10" leading="0.0" bottom="0.0" trailing="0.0"/>
                             </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" id="HgC-Br-c6O">
+                                <rect key="frame" x="151" y="430" width="111.5" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0Z9-Fu-6D9"/>
                         <color key="backgroundColor" name="YP Black"/>
@@ -124,6 +128,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="HgC-Br-c6O" id="1ok-dE-mlo"/>
                         <outlet property="counterLabel" destination="DeJ-0t-IY6" id="UC0-AF-J31"/>
                         <outlet property="imageView" destination="r5U-wD-hmc" id="4ms-ld-RwV"/>
                         <outlet property="textLabel" destination="qwE-31-Z6c" id="ZEs-da-Hee"/>

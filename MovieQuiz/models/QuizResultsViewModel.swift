@@ -5,10 +5,4 @@ struct QuizResultsViewModel {
   let text: String
   let buttonText: String
 }
-//
-//  Untitled.swift
-//  MovieQuiz
-//
-//  Created by иван  on 10.11.2025.
-//
 
