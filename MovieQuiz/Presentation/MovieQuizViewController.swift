@@ -7,6 +7,7 @@ final class MovieQuizViewController: UIViewController, MovieQuizViewControllerPr
         imageView.layer.cornerRadius = 20
         presenter = MovieQuizPresenter(viewController: self)
         presenter.startGame()
+        counterLabel.accessibilityIdentifier = "Index"
     }
     
     // MARK: - QuestionFactoryDelegate

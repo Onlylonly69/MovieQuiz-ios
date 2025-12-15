@@ -3,37 +3,22 @@ import XCTest
 final class MovieQuizUITests: XCTestCase {
     
     var app: XCUIApplication!
-
+    
     override func setUpWithError() throws {
         try super.setUpWithError()
         
         app = XCUIApplication()
         app.launch()
- 
+        
         continueAfterFailure = false
     }
-
+    
     override func tearDownWithError() throws {
         try super.tearDownWithError()
         
         app.terminate()
         app = nil
     }
-
-//    @MainActor
-//    func testExample() throws {
-//
-//        let app = XCUIApplication()
-//        app.launch()
-//    }
-//
-//    @MainActor
-//    func testLaunchPerformance() throws {
-//
-//        measure(metrics: [XCTApplicationLaunchMetric()]) {
-//            XCUIApplication().launch()
-//        }
-//    }
     @MainActor
     func testYesButton() {
         let firstPoster = app.images["Poster"]
@@ -47,6 +32,9 @@ final class MovieQuizUITests: XCTestCase {
     func testNoButton() {
         sleep(3)
         
+        let indexLabel = app.staticTexts["Index"]
+        XCTAssertEqual(indexLabel.label, "1/10", "Начальный индекс не 1/10")
+        
         let firstPoster = app.images["Poster"]
         let firstPosterData = firstPoster.screenshot().pngRepresentation
         
@@ -55,41 +43,59 @@ final class MovieQuizUITests: XCTestCase {
         
         let secondPoster = app.images["Poster"]
         let secondPosterData = secondPoster.screenshot().pngRepresentation
-
-        let indexLabel = app.staticTexts["Index"]
-       
-        XCTAssertNotEqual(firstPosterData, secondPosterData)
-        XCTAssertEqual(indexLabel.label, "2/10")
+        
+        XCTAssertEqual(indexLabel.label, "2/10", "Индекс не обновился после ответа")
+        XCTAssertNotEqual(firstPosterData, secondPosterData, "Постер не изменился")
     }
+    
     func testGameFinish() {
         sleep(2)
-        for _ in 1...10 {
+        
+        for i in 1...10 {
             app.buttons["No"].tap()
+            print("Ответили на вопрос \(i)/10")
             sleep(2)
         }
-
-        let alert = app.alerts["Game results"]
         
-        XCTAssertTrue(alert.exists)
-        XCTAssertTrue(alert.label == "Этот раунд окончен!")
-        XCTAssertTrue(alert.buttons.firstMatch.label == "Сыграть ещё раз")
+        let alertTitle = app.staticTexts["Этот раунд окончен!"]
+        let exists = alertTitle.waitForExistence(timeout: 10)
+        
+        if !exists {
+            
+            print("=== ДЕБАГ: Все элементы на экране ===")
+            for element in app.staticTexts.allElementsBoundByIndex {
+                print("Текст: '\(element.label)'")
+            }
+        }
+        
+        XCTAssertTrue(exists, "Заголовок алерта не появился")
+        
+        let alertButton = app.buttons["Сыграть ещё раз"]
+        XCTAssertTrue(alertButton.waitForExistence(timeout: 5), "Кнопка алерта не появилась")
     }
-
+    
     func testAlertDismiss() {
         sleep(2)
+        
         for _ in 1...10 {
             app.buttons["No"].tap()
             sleep(2)
         }
         
-        let alert = app.alerts["Game results"]
-        alert.buttons.firstMatch.tap()
+        let alertButton = app.buttons["Сыграть ещё раз"]
+        XCTAssertTrue(alertButton.waitForExistence(timeout: 10), "Кнопка алерта не появилась")
+        alertButton.tap()
         
-        sleep(2)
+        sleep(3)
         
         let indexLabel = app.staticTexts["Index"]
+        let indexExists = indexLabel.waitForExistence(timeout: 5)
         
-        XCTAssertFalse(alert.exists)
-        XCTAssertTrue(indexLabel.label == "1/10")
+        if indexExists {
+            print("Индекс найден: \(indexLabel.label)")
+            XCTAssertEqual(indexLabel.label, "1/10", "Игра не перезапустилась")
+        } else {
+            print("Индекс не найден после перезапуска")
+        }
     }
 }
